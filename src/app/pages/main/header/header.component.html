@@ -1,0 +1,23 @@
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">{{pageTitle}}</a>
+      <div *ngIf="router.url === '/';then signup else login"></div>
+      
+      <!--<ng-template #signup>
+        <ul class="right">
+          <li><a routerLink="/signup"><i class="material-icons left">perm_identity</i>
+            <span class="hide-on-med-and-down">Signup</span></a>
+          </li>
+        </ul>
+      </ng-template>-->
+     <!-- <ng-template #login>
+        <ul class="right">
+          <li><a routerLink="/"><i class="material-icons left">perm_identity</i>
+            <span class="hide-on-med-and-down">Login</span></a>
+          </li>
+        </ul>
+      </ng-template>-->
+    </div>
+  </nav>
+</div>

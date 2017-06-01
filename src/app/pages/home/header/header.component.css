@@ -1,0 +1,35 @@
+    /** login page */
+
+.brand-logo{
+    color: white;
+    text-align: center !important;  
+    font-size: 1.3rem !important; 
+    line-height: .8cm;
+    padding: 5px 15px;
+}
+
+
+nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+    height: 64px;
+    line-height: 42px;
+}
+
+nav{    
+    background-color: #009688 !important;
+    height: 40px !important;
+}
+
+  /** Home page */
+
+.dropdown:hover .dropdown-menu {
+
+    /** Show dropdown menu */
+    display: block;
+}
+
+.treeview{
+    max-width: 15% !important;
+        cursor: pointer;
+        width: 1%;
+}
+

@@ -1,0 +1,73 @@
+<app-header></app-header>
+<!-- login Component -->
+<div class="container">
+   <div class="row">
+      <div class="col s10 m5 l6 offset-s1 offset-m1 img-center">
+         <h4 style="text-align: center; ">Join your Family!</h4>
+         <img class='img-center' src="./assets/images/main/joinfamily1.png" alt='Join Family'>
+      </div>
+      <form name="form" (ngSubmit)="registerUser()" #f="ngForm" novalidate>
+      <div class="col s10 m5 l4 offset-s1 offset-l2 sigin">
+          <div class="row logform">
+           <!-- <h5>Join your Family!</h5>-->
+          </div>
+          <div class="row">
+              <div class="input-field col s10 offset-l1 offset-s1 offset-m1 m10 l10">
+         <input id="yourName" type="text" class="form-control" name="yourName" [(ngModel)]="signup.yourName" 
+         required #yourName="ngModel">
+         <label for="yourName">Your Name</label>
+         <small *ngIf="yourName.errors?.required && yourName.touched" class="error">
+        Your Name is required
+       </small>
+      </div>
+        <div class="input-field col s10 offset-l1 offset-s1 offset-m1 m10 l10">
+         <input id="familyName" type="text"class="form-control" name="familyName" [(ngModel)]="signup.familyName"
+          required #familyName="ngModel">
+         <label for="familyName" >Family Name</label>
+             <small *ngIf="familyName.errors?.required && familyName.touched" class="error">
+        Your Family Name is required
+       </small>
+      </div>
+      <div class="input-field inline col s10 offset-l1 offset-s1 offset-m1 m10 l10">
+         <input id="email" type="email" class="form-control" name="email" [(ngModel)]="signup.email" 
+         required #email="ngModel" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}">
+         <label for="email" data-error="Invalid email ID" data-success="" >Email or Mobile</label>
+           <small *ngIf="email.errors?.required && email.touched" class="error">
+        Email id / Mobile Number is required
+       </small>
+      </div>
+        <div class="input-field col s10 offset-l1 offset-s1 offset-m1 m10 l10" >
+          <input id="password" type="password" class="form-control" name="password"
+           [(ngModel)]="signup.password" required validateEqual="confirmPassword"
+            reverse="true" #password="ngModel">
+          <label for="password" >Password</label>
+             <small *ngIf="password.errors?.required && password.touched" class="error">
+        Password is required
+       </small>
+        </div>  
+  
+        <div class="input-field col s10 offset-l1 offset-s1 offset-m1 m10 l10" >
+          <input id="cnfpassword" type="password"class="form-control" name="confirmPassword" 
+          ngModel required validateEqual="password" reverse="false" #confirmPassword="ngModel">
+          <label for="cnfpassword" >Retype Password</label>
+             <small [hidden]="confirmPassword.valid || (confirmPassword.pristine && !f.submitted)" class="error">
+        Password mismatch
+      </small>
+        </div>
+      </div>
+  
+      <div class="row">
+       
+<button class="btn waves-effect waves-light col s6 offset-l3 offset-s3 offset-m3 l3 m6" 
+style="margin-left: 12%" type="submit" >Join</button>
+      </div>
+      <div class="row" style="margin-left: 32%">
+        <br>
+          Already Member? <a routerLink="/login" role="button">Log In</a> </div>
+      </div>
+      </form>
+   </div>
+</div>
+  <div class="row" id="display-failure" *ngIf="errorMsg===errMsg">
+    {{errorMsg}}
+  </div>

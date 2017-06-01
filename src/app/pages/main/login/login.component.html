@@ -1,0 +1,70 @@
+<app-header></app-header>
+<!-- login Component -->
+<div class="container">
+   <div  class="row">
+      <div class="col s10 m5 l6 offset-s1 offset-m1 img-center">
+         <h4 style="text-align: center;">Live with your Family in One Home!</h4>
+         <img class='img-center' src="./assets/images/main/familyhome.png" alt='Home Family'>
+      </div>
+        <form novalidate #f="ngForm" (ngSubmit)="submitUser()">
+      <div class="col s10 m5 l4 offset-s1 offset-l2 sigin">
+          <div class="row logform" style="padding-top: 75px">
+           <!-- <h5>Log In</h5>-->
+          </div>
+          <div class="row">
+      <div class="input-field inline col s10 offset-l1 offset-s1 offset-m1 m10 l10">
+         <input id="email" type="email" class="form-control" name="email" [(ngModel)]="login.email" 
+         required #email="ngModel" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}">
+         <label for="email" >Email or Mobile</label>
+           <small *ngIf="email.errors?.required && email.touched" class="error">
+        Email or Mobile Number is required
+       </small>
+      </div>
+</div>
+<div class="row" style="margin-bottom:10px !important;">
+        <div class="input-field col s10 offset-l1 offset-s1 offset-m1 m10 l10" >
+          <input id="password" type="password" class="form-control" name="password" [(ngModel)]="login.password" required #password="ngModel">
+          <label for="password" >Password</label>
+           <small *ngIf="password.errors?.required && password.touched" class="error">
+        Password is required
+       </small>
+        </div>
+      </div>
+   <!--   <div class="row" >
+    <div class="col s6 offset-l1 offset-m3 l6 m6 ">
+      <input type="checkbox" id="test5" checked="checked"/>
+      <label for="test5" style="color:black !important;">Remember me</label>
+    </div>
+      <div class="col s6 m6 offset-m3 l5" >
+            <a href="" class="forget" routerLink="/forgotpassword" >Forgot password?</a>
+            </div>
+    </div>-->
+      <div class="row">
+       <br>
+    <button class="btn waves-effect waves-light col s4 offset-l3 offset-s3 offset-m3 l3 m6" 
+    style="margin-left: 11%" type="submit" >Login</button> 
+      <div class="col s6 m6 offset-m3 l5" style="margin-left: 20%;margin-top: -1%">
+            <a href="" class="forget" routerLink="/forgotpassword" >Forgot password?</a>
+            </div>
+      </div> 
+       <div class="row" > 
+         <br>
+              <div class="create-acct" style="margin-left: 32%">
+           Not a Member yet?
+          <a routerLink="/signup" role="button">Sign Up</a>
+        </div>
+    </div>
+      </div>
+      
+      
+       
+      </form>
+   </div>  
+</div>
+
+  <div class="row" id="display-success" *ngIf="registerMsg===regMsg">
+    {{registerMsg}}
+  </div>
+   <div class="row" id="display-failure" *ngIf="errorLoginMsg===errLoginMsg">
+    {{errorLoginMsg}}
+  </div>

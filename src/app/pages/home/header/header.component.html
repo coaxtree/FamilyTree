@@ -1,0 +1,26 @@
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">{{pageTitle}}</a>
+      <div *ngIf="router.url === '/home'"></div>
+
+  <div class="right"><a href="#!" (click)='logout()'><i class="material-icons">power_settings_new</i>Logout</a></div> 
+      
+      <!--<ng-template #signup>
+        <ul class="right">
+          <li><a routerLink="/signup"><i class="material-icons left">perm_identity</i>
+            <span class="hide-on-med-and-down">Signup</span></a>
+          </li>
+        </ul>
+      </ng-template>-->
+     <!-- <ng-template #login>
+        <ul class="right">
+          <li><a routerLink="/"><i class="material-icons left">perm_identity</i>
+            <span class="hide-on-med-and-down">Login</span></a>
+          </li>
+        </ul>
+      </ng-template>-->
+    </div>
+  </nav>
+</div>
+
