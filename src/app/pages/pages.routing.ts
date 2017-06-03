@@ -5,15 +5,22 @@ import { PagesComponent } from "app/pages/pages.component";
 
 export const routes: Routes = [
 
- {
-    path: '',
-    loadChildren: 'app/pages/main/main.module#MainModule'
-  },
-   {
+  {
     path: 'home',
     loadChildren: 'app/pages/home/home.module#HomeModule'
-  }
+  },
+
+     {
+    path: '',
+    loadChildren: 'app/pages/tree/tree.module#TreeModule'
+  },
+ 
     
+ {
+    path: 'login',
+    loadChildren: 'app/pages/main/main.module#MainModule'
+  }
+
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forChild(routes);

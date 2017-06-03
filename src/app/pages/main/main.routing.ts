@@ -8,7 +8,7 @@ import { LoginComponent } from "app/pages/main/login/login.component";
 // noinspection TypeScriptValidateTypes
 export const routes: Routes = [
   {
-    path: '',
+    path: 'login',
     component: LoginComponent
   },
   {
