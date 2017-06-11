@@ -1,7 +1,7 @@
-.mainNode{
+.mainNode1{
  position:absolute;
     top: 10%;
-    left: 10%;
+    left: 25%;
     width:12em;
     height:5em;
     margin-top: -2em; /*set to a negative number 1/2 of your height*/

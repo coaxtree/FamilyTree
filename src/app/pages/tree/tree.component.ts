@@ -6,6 +6,7 @@ export class Relative{
  selectedRel:string 
 }
 
+
 @Component({
   selector: 'app-tree',
   templateUrl: './tree.component.html',
@@ -17,6 +18,10 @@ constructor(private componentFactoryResolver: ComponentFactoryResolver,
                 private viewContainerRef: ViewContainerRef) {
     }
 
+    relation={
+    name:'unknow',
+}
+
     private createNode() {
         const factory = this.componentFactoryResolver.resolveComponentFactory(NewNodeComponent);
         const ref = this.viewContainerRef.createComponent(factory);
@@ -24,12 +29,9 @@ constructor(private componentFactoryResolver: ComponentFactoryResolver,
     }
  
 
-public relation: Relative;
 
   ngOnInit(){
-    this.relation={
-      selectedRel:'',
-    }
+ 
   }
 
   name='Dilli Raja'

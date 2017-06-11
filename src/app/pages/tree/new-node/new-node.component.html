@@ -1,7 +1,7 @@
-<a class="collection mainNode" href="#modal1">
+<a class="collection" [ngStyle]="setMotherStyle()" href="#modal1">
   <div class="collection-item avatar">
     <img src="./assets/images/tree/icon_male.png" alt="" class="circle">
-    <span class="title">{{name}}</span>
+    <span class="title">{{relation.name}}</span>
   </div>
 </a>
 <!-- Modal Structure -->
@@ -9,7 +9,7 @@
   <div class="modal-content">
     <div class="row" style="margin-bottom: 10px">
       <div class="col s10">
-        <h5>{{name}}</h5>
+        <h5>{{relation.name}}</h5>
       </div>
       <div class="col s2">
         <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>

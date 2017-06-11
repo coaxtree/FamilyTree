@@ -9,13 +9,42 @@ import { TreeService } from "app/pages/tree/tree.service";
 
 export class NewNodeComponent implements AfterViewInit  {
 
-private name:string;
+
 
     constructor(private treeService:TreeService) { 
+
    }
 
     ngAfterViewInit(): void {
-        this.name = 'Father';
+       
     }
+
+setFatherStyle(){
+    let styles={
+         'position':'absolute',
+          'top': '15%',
+          'left': '25%',
+          'width':'12em',
+          'height':'5em',
+          'margin-top': '-2em', /*set to a negative number 1/2 of your height*/
+          'margin-left': '-6em' 
+    }
+
+    return styles;
+}
+
+setMotherStyle(){
+    let styles={
+         'position':'absolute',
+          'top': '15%',
+          'left': '75%',
+          'width': '12em',
+          'height':'5em',
+          'margin-top': '-2em', /*set to a negative number 1/2 of your height*/
+          'margin-left': '-6em' 
+    }
+
+    return styles;
+}
 
 }
