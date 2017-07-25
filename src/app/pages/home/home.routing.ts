@@ -6,7 +6,7 @@ import { HomeComponent } from "app/pages/home/home.component";
 // noinspection TypeScriptValidateTypes
 export const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: HomeComponent
   },
 

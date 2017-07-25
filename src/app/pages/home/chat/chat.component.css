@@ -1,0 +1,23 @@
+.side-nav{
+    transform: translateY(6%) !important;
+    width: 250px !important;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.search-wrapper{
+width: 200px !important;
+display: block !important;
+margin: auto;
+text-align: center;
+}
+
+li.search .search-wrapper i.material-icons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}

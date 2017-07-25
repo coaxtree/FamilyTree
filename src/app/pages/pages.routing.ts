@@ -6,12 +6,12 @@ import { PagesComponent } from "app/pages/pages.component";
 export const routes: Routes = [
 
   {
-    path: 'home',
+    path: '',
     loadChildren: 'app/pages/home/home.module#HomeModule'
   },
 
      {
-    path: '',
+    path: 'tree',
     loadChildren: 'app/pages/tree/tree.module#TreeModule'
   },
  

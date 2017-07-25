@@ -7,7 +7,7 @@ import { TreeComponent } from "app/pages/tree/tree.component";
 export const routes: Routes = [
 
     {
-    path: '',
+    path: 'tree',
     component: TreeComponent
   }
 
