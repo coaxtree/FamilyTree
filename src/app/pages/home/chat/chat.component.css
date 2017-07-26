@@ -21,3 +21,21 @@ li.search .search-wrapper i.material-icons {
     right: 10px;
     cursor: pointer;
 }
+
+
+.collection .collection-item.avatar{
+    min-height: 60px !important;
+}
+
+.collection .collection-item{
+    line-height: 2.7rem !important;
+}
+
+.active-icon{
+    background: rgb(66, 183, 42);
+    border-radius: 50%;
+    display: inline-block;
+    height: 6px;
+    margin-left: 1px;
+    width: 6px;
+}
