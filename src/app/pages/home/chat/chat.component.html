@@ -8,18 +8,47 @@
           </div>
       </li>
       <ul class="collection">
-      <li class="collection-item avatar">
-      <img src="./assets/images/home/user1.jpg" alt="profileicon" class="circle">
-      <span class="famiy-member">Jai kumar</span>
-      <span class="new badge">4</span>
-      <span class="active-icon"></span>
-    </li>
-     <li class="collection-item avatar">
-      <img src="./assets/images/home/user2.jpg" alt="profileicon" class="circle">
-      <span class="famiy-member">Mani Maran</span>
-      <span class="new badge">18</span>
-    </li>
-      </ul>
-
-    </ul>
-<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+       <li (click)="hideElement = !hideElement" class="collection-item avatar" href ="#chatpan">
+        <img src="./assets/images/home/user1.jpg" alt="profileicon" class="circle">
+        <span class="famiy-member">Jai kumar</span>
+        <span class="new badge">4</span>
+        <span class="active-icon"></span>
+       </li>
+       <li class="collection-item avatar">
+        <img src="./assets/images/home/user2.jpg" alt="profileicon" class="circle">
+        <span class="famiy-member">Mani Maran</span>
+        <span class="new badge">18</span>
+       </li>
+     </ul>
+     
+ </ul>
+ 
+ <div   class="msg_box" style="left:290px">
+	 <div class="col s12 m8 offset-m2 l6 offset-l3 msg_head">
+        <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row valign-wrapper">
+            <div class="col s2">
+              <img src="./assets/images/home/user1.jpg" alt="" class="circle responsive-img"> 
+            </div>
+            <div class="col s10">
+              <span class="black-text">
+               Jai kumar
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+	
+	<div class="msg_wrap" *ngIf="hideElement">
+		<div class="msg_body">
+			<div class="msg_a">This is from A	</div>
+			<div class="msg_b">This is from B, and its amazingly kool nah... i know it even i liked it :)</div>
+			<div class="msg_a">Wow, Thats great to hear from you man </div>	
+			<div class="msg_push"></div>
+		</div>
+	<div class="msg_footer"><textarea class="msg_input" rows="4"></textarea>
+  <a class = "btn-send">
+    <i class="material-icons right">send</i>
+  </a>
+  </div>
+</div>
