@@ -1,54 +1,45 @@
-
 <ul id="slide-out" class="side-nav fixed">
- 
-      <li class="search">
-          <div class="search-wrapper">
-            <i class="material-icons">search</i>
-            <input id="search" placeholder="Search">
-          </div>
-      </li>
-      <ul class="collection">
-       <li (click)="hideElement = !hideElement" class="collection-item avatar" href ="#chatpan">
-        <img src="./assets/images/home/user1.jpg" alt="profileicon" class="circle">
-        <span class="famiy-member">Jai kumar</span>
-        <span class="new badge">4</span>
-        <span class="active-icon"></span>
-       </li>
-       <li class="collection-item avatar">
-        <img src="./assets/images/home/user2.jpg" alt="profileicon" class="circle">
-        <span class="famiy-member">Mani Maran</span>
-        <span class="new badge">18</span>
-       </li>
-     </ul>
-     
- </ul>
- 
- <div   class="msg_box" style="left:290px">
-	 <div class="col s12 m8 offset-m2 l6 offset-l3 msg_head">
-        <div class="card-panel grey lighten-5 z-depth-1">
-          <div class="row valign-wrapper">
-            <div class="col s2">
-              <img src="./assets/images/home/user1.jpg" alt="" class="circle responsive-img"> 
-            </div>
-            <div class="col s10">
-              <span class="black-text">
-               Jai kumar
-              </span>
-            </div>
-          </div>
-        </div>
+  <li class="search">
+    <div class="search-wrapper">
+      <i class="material-icons">search</i>
+      <input id="search" placeholder="Search">
+    </div>
+  </li>
+  <ul class="collection">
+    <li *ngFor="let c of chatLists" (click)="onSelect(c)" [class.selected]="c === selectedChat" class="collection-item avatar">
+      <img src={{c.imgURL}} alt="profileicon" class="circle">
+      <span class="famiy-member">{{c.relationName}}</span>
+      <span class="new badge">{{c.message}}</span>
+      <span class="active-icon"></span>
+    </li>
+  </ul>
+</ul>
+
+<div class="chatbox" *ngIf='selectedChat'>
+  <div class="chat-header">
+    <span class="famiy-member">{{selectedChat.relationName}}</span>
+    <i class="material-icons right" (click)='onClose(ch)'>close</i>
+    <i class="material-icons right">settings</i>
+    <i class="material-icons right">call</i>
+    <i class="material-icons right">videocam</i>
+  </div>
+  <div class="chatlogs" #list [scrollTop]="list.scrollHeight" *ngIf='show'>
+    <div *ngFor="let message of messages">
+      <div class="time">{{message.date|date:'shortTime'}}</div>
+      <div class="chat self">
+        <div class="user-photo"><img src="./assets/images/home/user1.jpg"></div>
+        <p class="chat-message">{{message.text}}</p>
       </div>
-	
-	<div class="msg_wrap" *ngIf="hideElement">
-		<div class="msg_body">
-			<div class="msg_a">This is from A	</div>
-			<div class="msg_b">This is from B, and its amazingly kool nah... i know it even i liked it :)</div>
-			<div class="msg_a">Wow, Thats great to hear from you man </div>	
-			<div class="msg_push"></div>
-		</div>
-	<div class="msg_footer"><textarea class="msg_input" rows="4"></textarea>
-  <a class = "btn-send">
-    <i class="material-icons right">send</i>
-  </a>
+      <div class="chat family-user">
+        <div class="user-photo"><img src="./assets/images/home/user2.jpg"></div>
+        <p class="chat-message">{{message.text}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="chat-form" *ngIf='show'>
+    <i class="material-icons attach">attach_file</i>
+    <textarea placeholder="Type your message..." (keyup.enter)="sendMessage()" [(ngModel)]='messageText'></textarea>
+    <i class="material-icons smiley">sentiment_very_satisfied</i>
+    <!-- <button (click)='send()'>send</button> -->
   </div>
 </div>

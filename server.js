@@ -13,6 +13,9 @@ var passport = require('passport');
 require('./server/controllers/login/login.passport')(passport);
 
 var app = express();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+var port = 8000;
 
 app.use(cookieParser());
 app.use(session({
@@ -84,4 +87,18 @@ app.use(function(err, req, res, next) {
   });
 });
 
+io.on('connection', (socket) => {
+  console.log('new connection made');
+
+     socket.on('send-message', (data) => {
+    console.log(data.text);
+    io.emit('message-received', data);
+  });
+
+});
+
+server.listen(port, () => {
+  console.log("Listening on port " + port);
+});
+  
 module.exports = app;
